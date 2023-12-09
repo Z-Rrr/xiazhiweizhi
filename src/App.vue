@@ -3,6 +3,7 @@
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
         <router-link to="/HomePage">夏至未至</router-link> |
+    <router-link to="/ProductList">商品列表</router-link>  |
         <router-link to="/theCart">111</router-link>
     </nav>
   <router-view/>
