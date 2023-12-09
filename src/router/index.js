@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Cart from '../views/Cart.vue'; // 购物车页面组件路径
 
+//Vue.use(Router);
 const routes = [
   {
     path: '/',
@@ -23,12 +27,17 @@ const routes = [
     path: '/ProductList',
     name: 'ProductList',
     component: () => import('../views/ProductList.vue')
-    },
-  {
+  },{
     path: '/theCart',
-      name: '111',
-      component: () => import('../views/theCart.vue')
-    }
+    name: '111',
+    component: () => import('../views/theCart.vue')
+  },
+  ,{
+    path: '/Cart',
+    name: 'Cart',
+    component: Cart,
+    props: true // 启用 props 传递
+  },
 ]
 
 const router = createRouter({
@@ -37,3 +46,4 @@ const router = createRouter({
 })
 
 export default router
+
