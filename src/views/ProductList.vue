@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="product-list">
     <table class="table">
       <thead>
         <tr>
@@ -103,7 +103,7 @@
         transition: all .5s;
   }
   body {
-  background-image: url('C:\Users\ZR\Desktop\Dreams\Html代码\HTML期末小组作业-网上商城\xiazhiweizhi\images\ProductList.png');
+  background-image: url('E:\WTQ\Html小组作业\xiazhiweizhi\images\ProductList.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -118,5 +118,13 @@
   padding: 10px;
   border-radius: 5px;
   z-index: 1000;
+}
+
+.product-list {
+  background-image: url('E:\WTQ\Html小组作业\xiazhiweizhi\images\ProductList.png');
+  background-size: cover;
+  background-attachment: fixed; /* 背景随滚动而滚动 */
+  background-position: center;
+  background-repeat: no-repeat;
 }
   </style>

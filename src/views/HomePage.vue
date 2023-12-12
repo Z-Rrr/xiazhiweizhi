@@ -27,7 +27,7 @@ export default {
   justify-content: space-around;
   align-items: center;
   height: 100vh;
-  background-image: url('C:\Users\ZR\Desktop\Dreams\Html代码\HTML期末小组作业-网上商城\xiazhiweizhi\images\HomePage.png');
+  background-image: url('E:\WTQ\Html小组作业\xiazhiweizhi\images\HomePage.png');
   background-size: cover;
   background-position: center;
   overflow: hidden;
