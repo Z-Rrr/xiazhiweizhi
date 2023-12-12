@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in list" :key="item.id">
+        <tr v-for="(item, index) in list" :key="item.id" @click="goToBookDetails(index + 1)">
           <td>{{ index + 1 }}</td>
           <td><img :src="item.picture" width="80"/></td>
           <td>{{ item.name }}</td>
@@ -66,7 +66,15 @@
       cartItemsCount() {
         return this.$store.state.cart.length;
       }
+    },
+
+    methods: {
+    goToBookDetails(bookId) {
+      // 导航至书籍详情页面，传递书籍编号
+      this.$router.push({ name: 'BookDetails', params: { id: bookId } });
     }
+  }
+
   };
   </script>
   
