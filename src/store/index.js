@@ -14,6 +14,9 @@ export default createStore({
       } else {
         state.cart.push({ ...item, quantity: 1 });
       }
+    },
+    CLEAR_CART(state) {
+      state.cart = [];
     }
   },
   actions: {

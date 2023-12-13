@@ -22,6 +22,7 @@
     </table>
     <p class="total-price">购物车总价值：￥{{ calculateTotalPrice }}</p>
     <button @click="goToAccountPage" class="checkout-button">结算</button>
+    <button @click="clearCart" class="clear-cart-button">清空</button>
   </div>
 </template>
 
@@ -33,11 +34,17 @@ export default {
     },
     calculateTotalPrice() {
       return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
-    }
+    },
+    cartItemsCount() {
+      return this.cartItems.length;
+    },
   },
   methods: {
     goToAccountPage() {
       this.$router.push({ name: 'AccountPage' });
+    },
+    clearCart() {
+      this.$store.commit('CLEAR_CART');
     }
   }
 };
@@ -60,18 +67,25 @@ export default {
 }
 
 .checkout-button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 100px; /* 可以根据需要调整按钮与容器边缘的距离 */
-  padding: 15px 15px;
-  font-size: 2rem;
-  background-color: #4CAF50;
-  color: black;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: green; /* 红色背景 */
+  color: white;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+  margin: 10px;
 }
 
+.clear-cart-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #f44336; /* 红色背景 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+}
 
 </style>

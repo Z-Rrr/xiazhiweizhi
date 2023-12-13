@@ -20,17 +20,20 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
-  background-image: url('E:\WTQ\Html小组作业\xiazhiweizhi\images\HomePage.png');
+  height: 100vh; /* 视口高度 */
+  width: 100vw; /* 视口宽度 */
+  background-image: url('C:\Users\ZR\Desktop\Dreams\Html代码\HTML期末小组作业-网上商城\xiazhiweizhi\images\HomePage.png');
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  margin: 0; /* 移除可能的外边距 */
+  padding: 0; /* 移除可能的内边距 */
 }
 
 .title-container {
@@ -75,10 +78,12 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%; /* 确保宽度也被设置为100% */
 }
 
 #app {
   height: 100%;
+  width: 100%; /* 确保宽度也被设置为100% */
 }
 
 </style>

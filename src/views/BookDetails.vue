@@ -71,7 +71,7 @@ export default {
   name: '《生命之书》',
   author: '[印度] 克里希那穆提',
   picture: 'https://img14.360buyimg.com/n0/jfs/t1/70219/21/8371/422744/5d64c267Ec8744da4/5a8dd9628212d93a.jpg',
-  details: '本书是克氏教诲的精选，诸多内容内地读者都不曾接触。对于尚未领略克氏智慧之光的人而言，它是最佳入门读物，深入浅出，完整详实。'
+  details: '本书是克氏教诲的精选，诸多内容内地读者都不曾接触。对于尚未领略克氏智慧之光的人而言，它是最佳入门读物，深入浅出，完整详实。对从未接触过克氏思想的人来说，这本《生命之书》算是到目前为止内容最完整、最容易入门的默观教材。对已经入门的读者而言，本书能厘清许多克氏教诲所造成的困惑及曲解。有幸能再度译介克氏的思想及智慧，仍然受益良多。但愿有缘的读者也能领受这位"世界导师"的启蒙，体悟到冥想、日常实修与终极真理的精髓。'
 },
 {
   id: 8,
@@ -188,12 +188,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
- /* background-color: rgba(255, 255, 255, 0.5); /* 添加透明度为50%的白色背景 */
-  /* 您可以根据需要更改颜色 */
- /* margin-left: 10px; */
   width: 80%;
- /*padding-left: 150px;
-  width: calc(100% - 20px); */
 }
 
 img {
@@ -210,7 +205,7 @@ img {
 
 .book-details h1 {
   margin-top: 0; /* 移除标题的上边距 */
-  /* 其他样式保持不变 */
+
 }
 
 /* 为作者信息添加加粗样式 */
@@ -235,7 +230,6 @@ img {
 .book-intro-content {
   text-align: left; /* 左对齐 */
   text-indent: 2em; /* 首行缩进两个字符 */
- /* font-weight: bold; /* 字体加粗 */
   white-space: pre-wrap; /* 保留换行符和空白符 */
   margin-top: 0; /* 去掉段落顶部的外边距 */
   font-size: 20px; 

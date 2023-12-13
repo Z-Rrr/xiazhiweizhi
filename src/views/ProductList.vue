@@ -1,5 +1,8 @@
 <template>
   <div class="product-list">
+    <div class="search-box">
+      <input type="text" v-model="searchQuery" placeholder="搜索书籍...">
+    </div>
     <table class="table">
       <thead>
         <tr>
@@ -12,14 +15,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in list" :key="item.id" @click="goToBookDetails(index + 1)">
+        <!-- 使用 filteredBooks 替换 list -->
+        <tr v-for="(item, index) in filteredBooks" :key="item.id" @click="goToBookDetails(index + 1)">
           <td>{{ index + 1 }}</td>
           <td><img :src="item.picture" width="80"/></td>
           <td>{{ item.name }}</td>
           <td>{{ item.author }}</td>
           <td>￥{{ item.price }}</td>
           <td>
-            <button @click="addToCart(item)">加入购物车</button> <!-- 添加按钮 -->
+            <button @click="addToCart(item, $event)">加入购物车</button>
           </td>
         </tr>
       </tbody>
@@ -53,28 +57,33 @@
          {id:15,name:'《小王子》',author:'[法] 安东尼·德·圣埃克苏佩里',price:29.70,picture: 'https://img14.360buyimg.com/n0/jfs/t1/179768/1/27938/63110/63e34368F62a2a859/ea97c5fbb820a6fc.jpg'},
         ],
         // 购物车列表
-        cart: []
+        cart: [],
+        searchQuery: '', // 添加搜索查询字符串
       };
     },
     methods:{
-      addToCart(item) {
-        // 在这里实现添加到购物车的逻辑
+      addToCart(item, event) {
+        // 阻止事件冒泡
+        event.stopPropagation();
         this.$store.commit('addToCart', item);
-      }
+      },
+      goToBookDetails(bookId) {
+        // 导航至书籍详情页面，传递书籍编号
+        this.$router.push({ name: 'BookDetails', params: { id: bookId } });
+      },
     },
     computed: {
       cartItemsCount() {
         return this.$store.state.cart.length;
-      }
+      },
+      filteredBooks() {
+        let searchQueryLowerCase = this.searchQuery.toLowerCase();
+        return this.list.filter(item =>
+          item.name.toLowerCase().includes(searchQueryLowerCase) ||
+          item.author.toLowerCase().includes(searchQueryLowerCase)
+        );
+      },
     },
-
-    methods: {
-    goToBookDetails(bookId) {
-      // 导航至书籍详情页面，传递书籍编号
-      this.$router.push({ name: 'BookDetails', params: { id: bookId } });
-    }
-  }
-
   };
   </script>
   
@@ -111,7 +120,7 @@
         transition: all .5s;
   }
   body {
-  background-image: url('E:\WTQ\Html小组作业\xiazhiweizhi\images\ProductList.png');
+  background-image: url('C:\Users\ZR\Desktop\Dreams\Html代码\HTML期末小组作业-网上商城\xiazhiweizhi\images\ProductList.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -129,7 +138,7 @@
 }
 
 .product-list {
-  background-image: url('E:\WTQ\Html小组作业\xiazhiweizhi\images\ProductList.png');
+  background-image: url('C:\Users\ZR\Desktop\Dreams\Html代码\HTML期末小组作业-网上商城\xiazhiweizhi\images\ProductList.png');
   background-size: cover;
   background-attachment: fixed; /* 背景随滚动而滚动 */
   background-position: center;
