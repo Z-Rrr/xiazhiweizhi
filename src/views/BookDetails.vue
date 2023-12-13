@@ -150,15 +150,23 @@ body {
 
 .container {
   display: flex;
-  max-width: 800px;
-  margin: 20px auto;
+  width: 80%; /* 增加宽度，例如从原来的80%变为90% */
+  margin: 20px auto; /* 保持居中 */
   align-items: flex-start; /* 确保子元素从顶部开始对齐 */
+  background-color: rgba(255, 255, 255, 0.8); /* 设置透明度为80%的白色背景 */
+  padding: 20px; /* 为了增加周围的空间 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 2); /* 可选：添加阴影效果 */
+  border-radius: 10px; /* 可选：边角圆滑 */
 }
 
 .book-image img {
-  max-width: 100%;
-  height: auto;
-  transform: scale(1.4); /* 根据需要调整图片大小 */
+ /* max-width: 200%;
+  width: 100%; 
+  height: auto;*/
+  transform: scale(2.5); /* 根据需要调整图片大小 */
+  position: relative;
+  top: 100px; /* 向下移动10px */
+  left: 100px; /* 向右移动10px */
 }
 
 
@@ -167,17 +175,25 @@ body {
   padding: 20px;
   align-items: flex-start; /* 确保图片容器内部的对齐方式 */
   display: flex;
+  margin-right: 40px; 
+  position: relative;
+  left: 10px; /* 将图片向左移动，数值根据需要调整 */
 }
 
 .book-details {
-  flex: 2;
+  flex:2;
   padding: 20px;
+  font-size: 24px; 
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: rgba(255, 255, 255, 0.5); /* 添加透明度为50%的白色背景 */
+ /* background-color: rgba(255, 255, 255, 0.5); /* 添加透明度为50%的白色背景 */
   /* 您可以根据需要更改颜色 */
+ /* margin-left: 10px; */
+  width: 80%;
+ /*padding-left: 150px;
+  width: calc(100% - 20px); */
 }
 
 img {
@@ -206,7 +222,7 @@ img {
 .author-info {
   display: inline-block; /* 使元素以内联块的方式显示，这样text-align才能生效 */
   font-weight: bold; /* 字体加粗 */
-  font-size: larger; /* 字体放大 */
+  font-size: 25px;
 }
 
 
@@ -219,9 +235,11 @@ img {
 .book-intro-content {
   text-align: left; /* 左对齐 */
   text-indent: 2em; /* 首行缩进两个字符 */
-  font-weight: bold; /* 字体加粗 */
+ /* font-weight: bold; /* 字体加粗 */
   white-space: pre-wrap; /* 保留换行符和空白符 */
   margin-top: 0; /* 去掉段落顶部的外边距 */
+  font-size: 20px; 
+  line-height: 1.7;
 }
 
 </style>
